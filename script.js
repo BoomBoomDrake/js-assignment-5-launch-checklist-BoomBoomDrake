@@ -28,8 +28,8 @@ window.addEventListener("load", function () {
         destination.diameter,
         destination.star,
         destination.distance,
-        destination.moon,
-        destination.imageUrl
+        destination.moons,
+        destination.image
       );
     });
 });
