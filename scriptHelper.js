@@ -35,6 +35,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     fuelValid: false,
     cargoValid: false,
   };
+
   let pilotStatus = document.getElementById("pilotStatus");
   let copilotStatus = document.getElementById("copilotStatus");
   let fuelStatus = document.getElementById("fuelStatus");
@@ -58,6 +59,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(cargoLevel) === "Is not a number"
   )
     return alert("Invalid input.");
+
   // Successful validation
   list.style.visibility = "visible";
   pilotStatus.innerHTML = `Pilot ${pilot} ready for launch`;
@@ -88,7 +90,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
   let planetsReturned;
 
-  planetsReturned = await fetch().then(function (response) {});
+  planetsReturned = await fetch(
+    "https://handlers.education.launchcode.org/static/planets.json"
+  ).then(function (response) {
+    return response.json();
+  });
 
   return planetsReturned;
 }
