@@ -26,17 +26,31 @@ function addDestinationInfo(
 
 function validateInput(testInput) {
   if (testInput == "") return "Empty";
-  return isNaN(testInput) ? "Is a number" : "Is not a number";
+  return isNaN(testInput) ? "Is not a number" : "Is a number";
 }
 
-function formSubmission(
-  document,
-  list,
-  pilot,
-  copilot,
-  fuelLevel,
-  cargoLevel
-) {}
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+  // Guard clauses
+  if (
+    validateInput(pilot) === "Empty" ||
+    validateInput(copilot) === "Empty" ||
+    validateInput(fuelLevel) === "Empty" ||
+    validateInput(cargoLevel) === "Empty"
+  )
+    return alert("All fields are required.");
+  if (
+    validateInput(pilot) === "Is a number" ||
+    validateInput(copilot) === "Is a number"
+  )
+    return alert("Invalid name.");
+  if (
+    validateInput(fuelLevel) === "Is not a number" ||
+    validateInput(cargoLevel) === "Is not a number"
+  )
+    return alert("Invalid input.");
+
+  list.style.visibility = "visible";
+}
 
 async function myFetch() {
   let planetsReturned;
