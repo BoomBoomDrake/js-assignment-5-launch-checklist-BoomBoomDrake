@@ -25,7 +25,8 @@ function addDestinationInfo(
 }
 
 function validateInput(testInput) {
-  return isNaN(testInuput);
+  if (testInput == "") return "Empty";
+  return isNaN(testInput) ? "Is a number" : "Is not a number";
 }
 
 function formSubmission(
