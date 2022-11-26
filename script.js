@@ -12,8 +12,7 @@ window.addEventListener("load", function () {
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
   });
   let listedPlanets;
-  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-  let listedPlanetsResponse;
+  let listedPlanetsResponse = myFetch();
   listedPlanetsResponse
     .then(function (result) {
       listedPlanets = result;
