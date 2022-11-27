@@ -72,10 +72,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     launchStatus.fuelValid = false;
   }
   if (cargoLevel <= 10000) {
-    cargoStatus = `Cargo mass low enough for launch`;
+    cargoStatus.innerHTML = `Cargo mass low enough for launch`;
     launchStatus.cargoValid = true;
   } else {
-    cargoStatus = `Cargo mass too high for launch`;
+    cargoStatus.innerHTML = `Cargo mass too high for launch`;
     launchStatus.cargoValid = false;
   }
   if (launchStatus.fuelValid && launchStatus.cargoValid) {
